@@ -6,7 +6,15 @@
 //     return totalCalories / days.length;
 //   }
 
-
+function calcAverageCalories(days) {
+    let averegeColories = 0;
+    for (const item of days) {
+        averegeColories += item.calories;
+    }
+    console.log(
+        days.length != 0 ? (averegeColories = averegeColories / days.length) : 0,
+    );
+}
 
 
   console.log(
