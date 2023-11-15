@@ -1,16 +1,33 @@
-const profile = {
-    username: "Jacob",
-  playTime: 300,
+// const profile = {
+//     username: "Jacob",
+//   playTime: 300,
 
-  changeUsername: function(newName) {
-    this.username = newName;
-  },
-  updatePlayTime: function(hours) {
-    this.playTime += hours;
-  },
-  getInfo: function() {
-    return this.username + "has" + this.playTime + "active hours!";
-  }
+//   changeUsername: function(newName) {
+//     this.username = newName;
+//   },
+//   updatePlayTime: function(hours) {
+//     this.playTime += hours;
+//   },
+//   getInfo: function() {
+//     return this.username + "has" + this.playTime + "active hours!";
+//   }
+// };
+
+
+const profile = {
+    username: 'Jacob',
+    playTime: 300,
+    getInfo() {
+        return `${this.username} has ${this.playTime} active hours!`;
+    },
+    changeUsername(newName) {
+        this.username = newName;
+        return this.username;
+    },
+    updatePlayTime(hours) {
+        this.playTime += hours;
+        return this.playTime;
+    },
 };
 
 console.log(profile.getInfo()); // "Jacob has 300 active hours!"
