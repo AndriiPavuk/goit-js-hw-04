@@ -1,20 +1,20 @@
-// function calcAverageCalories(days) {
-//     let totalCalories = 0;
-//     for (let i = 0; i < days.length; i++) {
-//       totalCalories += days[i].calories;
-//     }
-//     return totalCalories / days.length;
-//   }
-
 function calcAverageCalories(days) {
-    let averegeColories = 0;
-    for (const item of days) {
-        averegeColories += item.calories;
+    let totalCalories = 0;
+    for (let i = 0; i < days.length; i++) {
+      totalCalories += days[i].calories;
     }
-    console.log(
-        days.length != 0 ? (averegeColories = averegeColories / days.length) : 0,
-    );
-}
+    return totalCalories / days.length;
+  }
+
+// function calcAverageCalories(days) {
+//     let averegeColories = 0;
+//     for (const item of days) {
+//         averegeColories += item.calories;
+//     }
+//     console.log(
+//         days.length != 0 ? (averegeColories = averegeColories / days.length) : 0,
+//     );
+// }
 
 
   console.log(
