@@ -17,25 +17,38 @@
 // }
 
 
-function calcAverageCalories(days) {
+// function calcAverageCalories(days) {
+//   if (!Array.isArray(days) || days.length === 0) {
+//     return "0";
+//   }
+//   let totalCalories = 0;
+//   let numberOfDays = 0;
+//   for (let i = 0; i < days.length; i++) {
+//     if (days[i].hasOwnProperty('calories')) {
+//       totalCalories += days[i].calories;
+//       numberOfDays++;
+//     }
+//   }
+//   if (numberOfDays === 0) {
+//     return "Всі об'єкти в масиві не містять властивість 'calories'";
+//   }
+//   const averageCalories = totalCalories / numberOfDays;
+//   return averageCalories;
+// }
+
+function calcAverageCalories(days) { 
   if (!Array.isArray(days) || days.length === 0) {
-    return "0";
+    return 0; 
   }
   let totalCalories = 0;
-  let numberOfDays = 0;
   for (let i = 0; i < days.length; i++) {
     if (days[i].hasOwnProperty('calories')) {
       totalCalories += days[i].calories;
-      numberOfDays++;
     }
   }
-  if (numberOfDays === 0) {
-    return "Всі об'єкти в масиві не містять властивість 'calories'";
-  }
-  const averageCalories = totalCalories / numberOfDays;
+  const averageCalories = totalCalories / days.length;
   return averageCalories;
 }
-
 
   console.log(
     calcAverageCalories([
