@@ -1,10 +1,10 @@
-function calcAverageCalories(days) {
-    let totalCalories = 0;
-    for (let i = 0; i < days.length; i++) {
-      totalCalories += days[i].calories;
-    }
-    return totalCalories / days.length;
-  }
+// function calcAverageCalories(days) {
+//     let totalCalories = 0;
+//     for (let i = 0; i < days.length; i++) {
+//       totalCalories += days[i].calories;
+//     }
+//     return totalCalories / days.length;
+//   }
 
 // function calcAverageCalories(days) {
 //     let averegeColories = 0;
@@ -17,6 +17,26 @@ function calcAverageCalories(days) {
 // }
 
 
+function calcAverageCalories(days) {
+  if (!Array.isArray(days) || days.length === 0) {
+    return "0";
+  }
+  let totalCalories = 0;
+  let numberOfDays = 0;
+  for (let i = 0; i < days.length; i++) {
+    if (days[i].hasOwnProperty('calories')) {
+      totalCalories += days[i].calories;
+      numberOfDays++;
+    }
+  }
+  if (numberOfDays === 0) {
+    return "Всі об'єкти в масиві не містять властивість 'calories'";
+  }
+  const averageCalories = totalCalories / numberOfDays;
+  return averageCalories;
+}
+
+
   console.log(
     calcAverageCalories([
       { day: "monday", calories: 3010 },
@@ -27,7 +47,7 @@ function calcAverageCalories(days) {
       { day: "saturday", calories: 3280 },
       { day: "sunday", calories: 3300 }
     ])
-  ); // 3180
+  ); 
   
   console.log(
     calcAverageCalories([
@@ -39,8 +59,7 @@ function calcAverageCalories(days) {
       { day: "saturday", calories: 2280 },
       { day: "sunday", calories: 2610 }
     ])
-  ); // 2270
-  
+  ); 
   console.log(
     calcAverageCalories([])
-  ); // 0
+  ); 
